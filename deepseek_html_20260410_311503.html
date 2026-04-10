@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Sherif Saeed · Industrial Automation Engineer</title>
+  <!-- Google Fonts & simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #eef2f5;
+      font-family: 'Inter', sans-serif;
+      color: #1a2c3e;
+      line-height: 1.45;
+      padding: 2rem 1rem;
+    }
+
+    /* main card container */
+    .resume-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* header section with subtle accent */
+    .header {
+      padding: 2rem 2.5rem 1.5rem 2.5rem;
+      background: white;
+      border-bottom: 1px solid #e9edf2;
+    }
+
+    .name {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a2942;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .badge-title {
+      display: inline-block;
+      background: #eef2fa;
+      color: #1e5a7d;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: 40px;
+      margin-top: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      row-gap: 0.6rem;
+      font-size: 0.9rem;
+      color: #3a5b74;
+      margin: 1rem 0 0.5rem 0;
+      border-top: 1px solid #eef2f5;
+      padding-top: 1rem;
+    }
+
+    .contact-bar a {
+      color: #1e6f9f;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .contact-bar a:hover {
+      color: #0a3b55;
+      text-decoration: underline;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* two column layout for main content */
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .left-col {
+      flex: 1.2;
+      background: #fafcff;
+      padding: 2rem 2rem 2rem 2.5rem;
+      border-right: 1px solid #eef2f5;
+    }
+
+    .right-col {
+      flex: 2;
+      padding: 2rem 2.5rem 2rem 2rem;
+      background: white;
+    }
+
+    /* section styling */
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #2c6b8f;
+      border-left: 4px solid #2c6b8f;
+      padding-left: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .job, .edu-item, .cert-item, .training-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-header, .training-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .job-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #0a2942;
+    }
+
+    .company {
+      font-weight: 600;
+      color: #2c6b8f;
+    }
+
+    .date {
+      font-size: 0.75rem;
+      color: #6f8faa;
+      font-weight: 500;
+    }
+
+    .desc-list {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .desc-list li {
+      margin-bottom: 0.5rem;
+      font-size: 0.88rem;
+      color: #2c3f4f;
+      line-height: 1.45;
+    }
+
+    .skill-badge {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-tag {
+      background: #e9f0f5;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1e5a7d;
+    }
+
+    .project-highlight {
+      background: #f5f9fe;
+      padding: 0.8rem 1rem;
+      border-radius: 18px;
+      margin-bottom: 1rem;
+      border: 1px solid #e6edf4;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: #e9edf2;
+    }
+
+    /* responsive */
+    @media (max-width: 780px) {
+      .header {
+        padding: 1.5rem;
+      }
+      .left-col, .right-col {
+        flex: auto;
+        width: 100%;
+        padding: 1.8rem;
+        border-right: none;
+      }
+      .name {
+        font-size: 2rem;
+      }
+      .two-columns {
+        flex-direction: column;
+      }
+    }
+
+    /* extra polish */
+    .icon-em {
+      font-weight: 500;
+    }
+    .badge-cert {
+      font-size: 0.8rem;
+      background: white;
+      border: 1px solid #dce5ec;
+      border-radius: 30px;
+      padding: 0.2rem 0.8rem;
+      display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+<div class="resume-card">
+  <!-- header with contact and profile -->
+  <div class="header">
+    <div class="name">Sherif Saeed Mohammed</div>
+    <div class="badge-title">Industrial Automation Engineer</div>
+    <div class="contact-bar">
+      <span class="contact-item">📍 New Cairo, Egypt</span>
+      <span class="contact-item">📞 (+20) 1064242715</span>
+      <span class="contact-item">✉️ <a href="mailto:sherfsaid773@gmail.com">sherfsaid773@gmail.com</a></span>
+      <span class="contact-item">🔗 <a href="#" target="_blank">linkedin.com/in/sherif-saeed-mohammed</a></span>
+    </div>
+    <div class="contact-bar" style="border-top: none; padding-top: 0; margin-top: 0;">
+      <span class="contact-item">🌐 Portfolio / GitHub (this resume)</span>
+    </div>
+    <!-- PROFILE summary -->
+    <div style="margin-top: 1.2rem; background: #f7faff; padding: 0.9rem 1.2rem; border-radius: 20px;">
+      <p style="font-size: 0.9rem; line-height: 1.5; color: #1c415c;"><strong>⚙️ Profile</strong><br>
+      Industrial Automation Engineer with hands-on experience in PLC programming, SCADA development, control system upgrades, and industrial commissioning. Skilled in Siemens S7-1500, S7-1200, ET200SP, WinCC, and TIA Portal. Experienced in FAT execution, field device integration, and system migration from Allen-Bradley to Siemens platforms. Committed to delivering reliable and optimized automation solutions.</p>
+    </div>
+  </div>
+
+  <div class="two-columns">
+    <!-- LEFT COLUMN: Skills, Certifications, Education, Additional -->
+    <div class="left-col">
+      <!-- Technical skills -->
+      <div class="section">
+        <div class="section-title">Core Competencies</div>
+        <div class="skill-badge">
+          <span class="skill-tag">Siemens S7-1500/1200</span>
+          <span class="skill-tag">ET200SP</span>
+          <span class="skill-tag">TIA Portal</span>
+          <span class="skill-tag">WinCC (SCADA & Unified)</span>
+          <span class="skill-tag">VFD Integration</span>
+          <span class="skill-tag">Profinet / Profibus</span>
+          <span class="skill-tag">Modbus TCP/IP, RTU</span>
+          <span class="skill-tag">C++ / Embedded C</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">AutoCAD Electrical</span>
+          <span class="skill-tag">SolidWorks / EAGLE</span>
+          <span class="skill-tag">FAT & Commissioning</span>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+          <div style="font-weight: 700;">Bachelor of Mechatronics Technology</div>
+          <div>Delta Technology University | 2024</div>
+          <div style="font-size: 0.85rem; color: #2c6b8f; margin-top: 0.2rem;">Graduation Grade: 89.7% — Excellence with Honors</div>
+          <div style="font-size: 0.85rem; margin-top: 0.3rem;">🏆 Graduation project: "Automatic electric wheelchair for people with special needs"</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div style="margin-bottom: 0.6rem;"><span class="badge-cert">✔ Employability Skills – Aspire Company (35H)</span></div>
+        <div style="margin-bottom: 0.6rem;"><span class="badge-cert">✔ Quality Control – American Chamber of Commerce (35H) 2024</span></div>
+        <div style="margin-bottom: 0.6rem;"><span class="badge-cert">✔ Project Management – American Chamber of Commerce (35H) 2024</span></div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="section">
+        <div class="section-title">Additional</div>
+        <div style="font-size: 0.88rem; margin-bottom: 0.4rem;">🪖 Military Status: Exempted</div>
+        <div style="font-size: 0.88rem;">🌍 Languages: Arabic (Native), English (Working Proficiency)</div>
+        <hr style="margin: 1rem 0 0 0;">
+        <div style="font-size: 0.8rem; margin-top: 0.8rem; color: #577a99;">📡 Industrial Communication: Profinet, Profibus, Modbus TCP/IP, Modbus RTU, OPC, IIoT fundamentals</div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Experience + Internship & Training -->
+    <div class="right-col">
+      <!-- Professional Experience -->
+      <div class="section">
+        <div class="section-title">Experience</div>
+        
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Automation Engineer</span>
+            <span class="date">2025 – Present</span>
+          </div>
+          <div class="company">IMHOSYS – Cairo, Egypt</div>
+          <ul class="desc-list">
+            <li><strong>Dust Steel Zinc Oxide Plant – Minya:</strong> Developed control logic for 3 Siemens S7-1500 PLCs using TIA Portal. Integrated VFDs, motors, valves, and transmitters.</li>
+            <li>Designed WinCC V8.0 SCADA system, executed Factory Acceptance Testing (FAT) and led full commissioning activities.</li>
+            <li>Applied Siemens Library of Basic Processes (LBP) for structured, scalable programming.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Control System Upgrade Engineer</span>
+            <span class="date">Current Project</span>
+          </div>
+          <div class="company">Sinai Cement Project – Legacy Migration (Allen‑Bradley → Siemens)</div>
+          <ul class="desc-list">
+            <li>Led migration of legacy Allen‑Bradley (FLS) control system to Siemens platform: PLC hardware replacement, logic restructuring, full project redevelopment and field re‑commissioning.</li>
+            <li>Engineered 5 local PLC systems (ET200SP CPU) for Cooler Hydraulic System, Coal Mill (Gear/Roller Lubrication, Lubrication Unit), Bypass Filter, Spray Lubrication, Calciner (Burner Gas & Mazut Control).</li>
+            <li>Implemented control systems, drawing screens/mimics using Comfort & Unified HMI. Prepared Signal List, Functional Description, Communication List with Main PLC.</li>
+            <li>Currently supporting project readiness for Factory Acceptance Test (FAT).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Internship & Intensive Program -->
+      <div class="section">
+        <div class="section-title">Internship & Training</div>
+        <div class="training-item">
+          <div class="job-header">
+            <span class="job-title">Industrial Automation Intensive Program</span>
+            <span class="date">March 2025 – July 2025 (4 months)</span>
+          </div>
+          <div class="company">ITI (Information Technology Institute)</div>
+          <ul class="desc-list">
+            <li>Advanced PLC & SCADA: Siemens TIA Portal, SIMATIC Manager, WinCC. Hands-on with S7-1500/1200, Industrial Robotics, Profinet, OPC, IIoT.</li>
+            <li>Worked with VFDs, hydraulics, pneumatics, and industrial instrumentation.</li>
+            <li>Designed full SCADA system for 3-tank reservoir with safety interlocks, remote monitoring via WinCC Web Navigator.</li>
+          </ul>
+        </div>
+        <!-- highlight additional technical training -->
+        <div class="project-highlight" style="margin-top: 0.5rem;">
+          <div style="font-weight: 600; margin-bottom: 0.3rem;">🔧 Key project – SCADA & Remote Monitoring</div>
+          <div style="font-size: 0.85rem;">Designed and implemented a remote monitoring system for industrial processes using WinCC Web Navigator, integrating safety interlocks and real-time visualization — part of ITI intensive program.</div>
+        </div>
+      </div>
+
+      <!-- Additional key achievements / industrial summary -->
+      <div class="section">
+        <div class="section-title">Commissioning & Integration Highlights</div>
+        <ul class="desc-list">
+          <li>Full FAT execution and on-site commissioning for greenfield zinc oxide plant (Siemens platform).</li>
+          <li>Seamless integration of field devices: pressure/temperature transmitters, VFDs, control valves, and motor control centers.</li>
+          <li>System migration experience: from legacy Allen‑Bradley to Siemens TIA Portal with zero downtime strategy.</li>
+          <li>Used Siemens LBP (Library of Basic Processes) for standardized code reusability and faster development cycles.</li>
+        </ul>
+      </div>
+      
+      <!-- GitHub friendly footer note -->
+      <div style="margin-top: 1rem; font-size: 0.7rem; text-align: right; border-top: 1px solid #eef2f5; padding-top: 1rem; color: #6f8faa;">
+        📄 HTML resume – Designed for GitHub Pages | Sherif Saeed – Industrial Automation Engineer
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
